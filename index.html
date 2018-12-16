@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Template</title>
+
+        <!-- Angular Version Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+        <script src="app.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether-theme-arrows-dark.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+
+        
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" type="text/css" href="styles/css/style.css">
+
+
+        <script src="styles/js/common.js"></script>
+        <script src="styles/js/scrollpanel.js"></script>
+        
+        
+
+
+
+</head>
+
+<body data-ng-controller="MainCtrl as vm">
+    <nav class="left-menu" left-menu ng-class="{'hidden-left-menu': hideLeftMenu}" >
+        <div class="logo-container">
+            <a href="#/dashboards/alpha" class="logo" style="display:inline-block;">
+                <img src="styles/img/logo.png" alt="Visualizer" />
+            </a>
+        </div>
+        <div class="left-menu-inner scroll-pane">
+            <ul class="left-menu-list left-menu-list-root list-unstyled">
+                <li class="left-menu-list-submenu">
+                </li>
+                <li>
+                    <a class="left-menu-link pagination-buttons" ng-click="go_to_dashboard();">
+                        <i class="fas fa-home text-color"></i>
+                        Dashboard
+                    </a>
+                </li>
+                
+                
+                <li class="left-menu-list-separator"><!-- --></li>
+                <li>
+                    <a class="left-menu-link pagination-buttons" ng-click="go_to_images();">
+                        <i class="far fa-images text-color"></i>
+                        Images
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="top-menu " ng-class="{'hidden-top-menu': hideTopMenu}" >
+        <div class="menu-icon-container hidden-md-up " >
+            <div class="animate-menu-button left-menu-toggle">
+                <div><!-- --></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-user-block menu-notifications">
+                <div class="dropdown dropdown-avatar">
+   
+                    <span><a style="cursor:pointer;margin-left:15px;margin-bottom:5px" ng-click="logout();"><i class="fas fa-sign-out-alt"></i> Logout</a></span>
+                </div>
+            </div>
+            <div class="menu-info-block" >
+                <h6 class="nav-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                  </h6>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-content-inner">
+        <section class="page-content" ng-view ></section>
+        <footer class="footer mt-2">
+            <div class="container ">
+                <div class="col-lg-4">
+                        <div class="col-lg-2 mt-2">
+                            <ul class="list-unstyled">
+                                <li><a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+                                <li class="mt-1"><a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></a></li>
+                                <li class="mt-1"><a target="_blank" href="https://twitter.com/" ><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-1 mt-2">
+                            <ul class="list-unstyled">
+                                <li><a target="_blank" ng-href="mailto:info@gmail.com">info@gmail.com</a></li>
+                                <li class="mt-1"><a target="_blank" ng-href="mailto:info@gmail.com">info@gmail.com</a></li>
+                                <li class="mt-1"><a target="_blank" ng-href="mailto:info@gmail.com">info@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="col-lg-7 mt-2">
+                    <div>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    
+                    </div>
+                </div>
+            </div>
+          </footer>
+        </div>
+        </div>
+      
+    <style>
+            .highlighted { background: yellow; }
+            .sortable { background:#ddeaff; cursor:pointer; }
+        </style>
+</body>
+</html>

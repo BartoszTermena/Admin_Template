@@ -1,0 +1,72 @@
+
+@import url(helpers/base.default.css);
+@import url(helpers/base.responsive.css);
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+/* FIX FOR LATO FONT */
+body, input, textarea, keygen, select, button {
+    letter-spacing: .3px !important;
+}
+.text-color {
+    color: #77cccf;
+}
+.text-action {
+    cursor:pointer;
+}
+.search-table-outter { 
+    overflow-x: scroll; 
+}
+.images-img {
+    width: 424px;
+    height: auto;
+}
+.flexcss{
+    flex-direction: row
+}
+.pagination-buttons {
+    cursor:pointer;
+}
+.dashboard-search {
+    display:inline-block;
+    position:relative;
+    float:right;
+}
+.dashboard-filters {
+    display:inline-block;
+    position:relative;
+}
+.button-color {
+    background-color: #ddeaff;
+    color: black
+}
+.button-color-after {
+    background-color: #77cccf;
+    color: white
+}
+.date-input {
+    width:150px;
+    margin-left:5px;
+    margin-right: 5px;
+}
+.date-from-to {
+    margin-left:5px;
+}
+.thumbnails-img {
+    
+    margin-right: 10px;
+    display:inline-block;
+    text-align:center;
+}
+.image-size {
+    max-width: 350px;
+    max-height: 200px;
+    margin: 5px;
+}
+.text-center {
+    text-align: center
+}
+.nav-title {
+    text-align: center;
+    margin-bottom: 3px;
+    word-break: break-all;
+}

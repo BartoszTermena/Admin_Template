@@ -1,0 +1,71 @@
+<section class="panel">
+        <div class="panel-heading">
+            <h3>Dashboard</h3>
+          </div>
+          <div class="panel-body">
+              <div class="row">
+                  <div class="menu-info-block">
+                        <div class="dashboard-search">
+                            <input type="text" class="form-control form-control form-control-rounded" placeholder="Search..." ng-model="search.first_name">
+                        </div>
+                        
+                      <div class="dropdown mb-1 dashboard-filters">
+                          <button class="btn button-color dropdown-toggle btn-default" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              {{page}}
+                          </button>
+
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                              <a class="dropdown-item pagination-buttons" ng-click="onSelectBoxChange('ten');">10</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item pagination-buttons" ng-click="onSelectBoxChange('twenty');">20</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item pagination-buttons" ng-click="onSelectBoxChange('fifty');">50</a>
+                          </div>
+                      </div>
+                      <div class="dropdown mb-1 dashboard-filters">
+                            <button class="btn button-color dropdown-toggle btn-default" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Date Filter
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                    <span class="date-from-to">From: </span>
+                                    <input class="form-control date-input" ng-model="date.from" type="date" />
+                                    <div class="dropdown-divider"></div>
+                                    <span class="date-from-to">To: </span>
+                                    <input class="form-control date-input" ng-model="date.to" type="date" />
+                            </div>
+                        </div>
+                        </div>
+        <div class="search-table-outter">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th ng-click="sortBy('first_name');name = !name" title="sort by first name" ng-hide="name" class="button-color text-action">first_name</th>
+                    <th ng-click="sortBy('first_name');name = !name" title="sort by first name" ng-hide="!name" class="button-color-after text-action">first_name</th>
+                    <th>last_name</th>
+                    <th>email </th>
+                    <th>modified</th>
+                    <th>country</th>
+                    <th class="button-color text-action" title="show vips" ng-hide="vip" ng-click="vip = !vip">vip</th>
+                    <th class="button-color-after text-action" title="show everyone" ng-hide="!vip" ng-click="vip = !vip">vip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="n in data | orderBy:propertyName:reverse | filter:search | dateFilter:date.from:date.to | vipFilter:vip | limitTo:page">
+                    <td>{{n.id}}</td>
+                    <td ng-bind-html="n.first_name | highlight:search.first_name">{{n.first_name}}</td>
+                    <td>{{n.last_name}}</td>
+                    <td>{{n.email}}</td>
+                    <td>{{n.modified | date:'yyyy-MM-dd'}}</td>
+                    <td>{{n.country}}</td>
+                    <td ng-if="n.vip === true"><i class="fas fa-check"></i></td>
+                    <td ng-if="n.vip === false"><i class="fas fa-times"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        the table counts {{data.length}} entries
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
