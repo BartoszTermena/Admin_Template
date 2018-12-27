@@ -1,4 +1,4 @@
-<h2>AngularJS Admin Dashboard</h2>
+<h2 align="center">AngularJS Admin Dashboard</h2>
 <p align="center">
 
 <img  src="/screen_record_4.gif?raw=true" width="600px">
